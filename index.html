@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>YouTube Fun</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"  >
+</head>
+
+<body>
+  <center><h1>YouTube Fun</h1>
+
+<!-- Video -->
+<div>
+  <iframe id="utube" width="560" height="315" src="//www.youtube.com/embed/Q4mGfgJSvQw" frameborder="10" allowfullscreen></iframe>
+</div>
+<!-- Video Search -->
+<div>
+  <form class="videosearchform" action="">
+    <input class="videosearchinput" id="yts" />
+    <button onclick="videosearch()">Search</button>
+  </form>
+</div>
+</center>
+<!-- ALL THE SCRIPT -->
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var socket = io();
+
+  var videosearch = function(){
+    var userSearch = document.getElementById("yts").value;
+    socket.emit('ytsearch', userSearch);
+  };
+
+  socket.on('toClient', function(foo){
+    console.log(foo);
+    document.getElementById("utube").src = foo;
+  });
+
+</script>
+
+</body>
+</html>

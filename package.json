@@ -1,0 +1,9 @@
+{
+  "name": "youtube-node",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.4",
+    "socket.io": "^1.2.1",
+    "youtube-node": "^1.1.2"
+  }
+}
