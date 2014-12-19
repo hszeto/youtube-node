@@ -8,20 +8,25 @@
 </head>
 
 <body>
-  <center><h1>YouTube Fun</h1>
+  <center>
+<div class="logo"> 
+    <h1>YouTube Fun</h1>
+</div>
 
 <!-- Video -->
-<div>
+<div class="videoFrame">
   <iframe id="utube" width="560" height="315" src="//www.youtube.com/embed/Q4mGfgJSvQw" frameborder="10" allowfullscreen></iframe>
 </div>
 <!-- Video Search -->
-<div>
+<div class="videoSearch">
   <form class="videosearchform" action="">
     <input class="videosearchinput" id="yts" />
     <button onclick="videosearch()">Search</button>
   </form>
 </div>
 </center>
+
+
 <!-- ALL THE SCRIPT -->
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

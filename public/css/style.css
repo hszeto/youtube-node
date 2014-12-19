@@ -1,10 +1,27 @@
 body { 
   font-family: 'Roboto', sans-serif;
-  background: url(matrixbg.jpg);
+  background: url(tvbg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 h1{
-    color:white;
+  color:white;
+}
+
+.logo {
+  width: 560px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(222,132,42,0.3);
+  background-color: rgba(222,132,42,0.3);
+}
+
+.videoFrame {
+	margin-top: 10px
+
+}
+
+.videoSearch {
+  margin-top: 80px;
 }
