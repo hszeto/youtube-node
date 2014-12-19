@@ -9,6 +9,8 @@
 
 <body>
   <center>
+
+<!-- Top Logo -->
 <div class="logo"> 
     <h1>YouTube Fun</h1>
 </div>
@@ -33,14 +35,18 @@
 <script>
   var socket = io();
 
+  // Video Search
   var videosearch = function(){
+    // grab user input
     var userSearch = document.getElementById("yts").value;
+    // send search result to server
     socket.emit('ytsearch', userSearch);
   };
 
-  socket.on('toClient', function(foo){
-    console.log(foo);
-    document.getElementById("utube").src = foo;
+  // listen to new video like from server 
+  socket.on('toClient', function(ytlink){
+    console.log(ytlink);
+    document.getElementById("utube").src = ytlink;
   });
 
 </script>

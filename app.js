@@ -25,9 +25,10 @@ io.on('connection', function(client){
 	// ytdata = video search
 	client.on('ytsearch', function(ytdata) {
 		console.log('ytdata is: ', ytdata);
+			//youTube module search for video id by user's input
 			youTube.setKey('AIzaSyB1OOSpTREs85WUMvIgJvLTZKye4BVsoFU');
 			youTube.search(ytdata, 1, function(resultData) {
-				var ytVideoId = resultData.items[0].id.videoId;
+				var ytVideoId = resultData.items[0].id.videoId; //grab video id
 				var yturl = '//www.youtube.com/embed/'+ytVideoId+'?rel=0&autoplay=1';
 				console.log(yturl);
 			
